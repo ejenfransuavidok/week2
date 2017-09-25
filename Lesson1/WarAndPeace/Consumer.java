@@ -13,7 +13,7 @@ public class Consumer extends Thread {
                 try {
                     String value = Producer.data.take();
                     for(String item : value.split(" ")){
-                        counter += item.trim().replaceAll("[^a-яА-Я]", "").equals("страдание") ? 1 : 0;
+                        counter += item.replaceAll("[^a-яА-Я]", "").equals("страдание") ? 1 : 0;
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
