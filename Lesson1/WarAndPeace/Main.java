@@ -6,12 +6,15 @@ package week2.Lesson1.WarAndPeace;
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
+        long startTime = System.currentTimeMillis();
         Producer producer = new Producer();
         Consumer consumer = new Consumer();
         producer.start();
         consumer.start();
-        producer.join();
-        consumer.join();
+        while(Consumer.stop == false) {}
         System.out.println("countOf(страдание) = " + Consumer.counter);
+        long endTime   = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        System.out.println(totalTime);
     }
 }

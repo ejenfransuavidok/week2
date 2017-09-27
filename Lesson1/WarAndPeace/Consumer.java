@@ -6,6 +6,7 @@ package week2.Lesson1.WarAndPeace;
 public class Consumer extends Thread {
 
     public static int counter = 0;
+    public static volatile boolean stop = false;
 
     public void run(){
         while(!Producer.stop) {
@@ -20,6 +21,8 @@ public class Consumer extends Thread {
                 }
             }
         }
+        System.out.println("Consumer stop...");
+        stop = true;
     }
 
 }

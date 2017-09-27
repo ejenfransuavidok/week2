@@ -17,12 +17,14 @@ public class Main {
         s4.start();
         s5.start();
         s6.start();
+/*
         s1.join();
         s2.join();
         s3.join();
         s4.join();
         s5.join();
         s6.join();
+*/
         System.out.println("END");
     }
 }

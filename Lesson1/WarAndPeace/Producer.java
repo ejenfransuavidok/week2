@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class Producer extends Thread {
 
     final static public BlockingQueue<String> data = new LinkedBlockingQueue<>();
-    public static boolean stop = false;
+    public static volatile boolean stop = false;
 
     public void run(){
         try(
@@ -28,6 +28,7 @@ public class Producer extends Thread {
             e.printStackTrace();
         }
         stop = true;
+        System.out.println("Producer stop...");
     }
 
 }
